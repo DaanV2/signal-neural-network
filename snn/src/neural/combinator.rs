@@ -22,6 +22,7 @@ pub fn combinator_from_str(name: &str) -> Option<Box<dyn Combinator>> {
     }
 }
 
+/// A combinator node that sums all input values.
 pub struct AdditionCombinatorNode {}
 
 impl AdditionCombinatorNode {
@@ -40,6 +41,7 @@ impl Combinator for AdditionCombinatorNode {
     }
 }
 
+/// A combinator node that multiplies all input values.
 pub struct MultiplicationCombinatorNode {}
 
 impl MultiplicationCombinatorNode {
@@ -58,6 +60,7 @@ impl Combinator for MultiplicationCombinatorNode {
     }
 }
 
+/// A combinator node that returns the maximum value from the inputs.
 pub struct MaxCombinatorNode {}
 
 impl MaxCombinatorNode {
@@ -76,6 +79,7 @@ impl Combinator for MaxCombinatorNode {
     }
 }
 
+/// A combinator node that returns the minimum value from the inputs.
 pub struct MinCombinatorNode {}
 
 impl MinCombinatorNode {
@@ -94,6 +98,7 @@ impl Combinator for MinCombinatorNode {
     }
 }
 
+/// A combinator node that returns the average of the input values.
 pub struct AverageCombinatorNode {}
 
 impl AverageCombinatorNode {
@@ -116,6 +121,7 @@ impl Combinator for AverageCombinatorNode {
     }
 }
 
+/// A combinator node that returns the median value from the inputs.
 pub struct MedianCombinatorNode {}
 
 impl MedianCombinatorNode {
@@ -144,6 +150,7 @@ impl Combinator for MedianCombinatorNode {
     }
 }
 
+/// A combinator node that performs a bitwise OR across all input values.
 pub struct ORCombinatorNode {}
 
 impl ORCombinatorNode {
@@ -161,6 +168,7 @@ impl Combinator for ORCombinatorNode {
         Self::IDENTIFIER.to_string()
     }
 }
+/// A combinator node that performs a bitwise AND across all input values.
 pub struct ANDCombinatorNode {}
 
 impl ANDCombinatorNode {
@@ -179,6 +187,7 @@ impl Combinator for ANDCombinatorNode {
     }
 }
 
+/// A combinator node that performs a bitwise XOR across all input values.
 pub struct XORCombinatorNode {}
 
 impl XORCombinatorNode {
@@ -196,6 +205,7 @@ impl Combinator for XORCombinatorNode {
         Self::IDENTIFIER.to_string()
     }
 }
+/// A combinator node that performs a bitwise NAND across all input values.
 pub struct NANDCombinatorNode {}
 
 impl NANDCombinatorNode {
@@ -214,6 +224,7 @@ impl Combinator for NANDCombinatorNode {
         Self::IDENTIFIER.to_string()
     }
 }
+/// A combinator node that performs a bitwise NOR across all input values.
 pub struct NORCombinatorNode {}
 
 impl NORCombinatorNode {
@@ -232,6 +243,7 @@ impl Combinator for NORCombinatorNode {
         Self::IDENTIFIER.to_string()
     }
 }
+/// A combinator node that performs a bitwise XNOR across all input values.
 pub struct XNORCombinatorNode {}
 
 impl XNORCombinatorNode {
