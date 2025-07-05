@@ -1,0 +1,21 @@
+name: Rust
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  rust-ci:
+    name: 🦀 Rust CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📦 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔨 Build all crates (workspace, all features)
+        run: cargo build --workspace --all-features --verbose
+
+      - name: 📋 Run all tests (workspace, all features)
+        run: cargo test --workspace --all-features --verbose
