@@ -26,6 +26,9 @@ pub struct AdditionCombinatorNode {}
 
 impl AdditionCombinatorNode {
     pub const IDENTIFIER: &'static str = "addition";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
 
 impl Combinator for AdditionCombinatorNode {
@@ -41,6 +44,9 @@ pub struct MultiplicationCombinatorNode {}
 
 impl MultiplicationCombinatorNode {
     pub const IDENTIFIER: &'static str = "multiply";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
 
 impl Combinator for MultiplicationCombinatorNode {
@@ -53,9 +59,14 @@ impl Combinator for MultiplicationCombinatorNode {
 }
 
 pub struct MaxCombinatorNode {}
+
 impl MaxCombinatorNode {
     pub const IDENTIFIER: &'static str = "max";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for MaxCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         *inputs.iter().max().unwrap_or(&0)
@@ -66,9 +77,14 @@ impl Combinator for MaxCombinatorNode {
 }
 
 pub struct MinCombinatorNode {}
+
 impl MinCombinatorNode {
     pub const IDENTIFIER: &'static str = "min";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for MinCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         *inputs.iter().min().unwrap_or(&0)
@@ -79,9 +95,14 @@ impl Combinator for MinCombinatorNode {
 }
 
 pub struct AverageCombinatorNode {}
+
 impl AverageCombinatorNode {
     pub const IDENTIFIER: &'static str = "average";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for AverageCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         if inputs.is_empty() {
@@ -96,9 +117,14 @@ impl Combinator for AverageCombinatorNode {
 }
 
 pub struct MedianCombinatorNode {}
+
 impl MedianCombinatorNode {
     pub const IDENTIFIER: &'static str = "median";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for MedianCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         if inputs.is_empty() {
@@ -119,9 +145,14 @@ impl Combinator for MedianCombinatorNode {
 }
 
 pub struct ORCombinatorNode {}
+
 impl ORCombinatorNode {
     pub const IDENTIFIER: &'static str = "or";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for ORCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         inputs.iter().fold(0, |acc, &x| acc | x)
@@ -131,9 +162,14 @@ impl Combinator for ORCombinatorNode {
     }
 }
 pub struct ANDCombinatorNode {}
+
 impl ANDCombinatorNode {
     pub const IDENTIFIER: &'static str = "and";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for ANDCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         inputs.iter().fold(0xFF, |acc, &x| acc & x)
@@ -144,9 +180,14 @@ impl Combinator for ANDCombinatorNode {
 }
 
 pub struct XORCombinatorNode {}
+
 impl XORCombinatorNode {
     pub const IDENTIFIER: &'static str = "xor";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for XORCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         inputs.iter().fold(0, |acc, &x| acc ^ x)
@@ -156,9 +197,14 @@ impl Combinator for XORCombinatorNode {
     }
 }
 pub struct NANDCombinatorNode {}
+
 impl NANDCombinatorNode {
     pub const IDENTIFIER: &'static str = "nand";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for NANDCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         let and_result = inputs.iter().fold(0xFF, |acc, &x| acc & x);
@@ -169,9 +215,14 @@ impl Combinator for NANDCombinatorNode {
     }
 }
 pub struct NORCombinatorNode {}
+
 impl NORCombinatorNode {
     pub const IDENTIFIER: &'static str = "nor";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for NORCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         let or_result = inputs.iter().fold(0, |acc, &x| acc | x);
@@ -182,9 +233,14 @@ impl Combinator for NORCombinatorNode {
     }
 }
 pub struct XNORCombinatorNode {}
+
 impl XNORCombinatorNode {
     pub const IDENTIFIER: &'static str = "xnor";
+    pub fn new() -> Self {
+        Self {}
+    }
 }
+
 impl Combinator for XNORCombinatorNode {
     fn combine(&self, inputs: &[u8]) -> u8 {
         let xor_result = inputs.iter().fold(0, |acc, &x| acc ^ x);
