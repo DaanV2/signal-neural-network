@@ -30,7 +30,7 @@ For this reason, I assume that we can process all inputs at the same time.
 
 One of the nodes in the network will be a mapped transformation. Which can do some interesting things with the signal. That are either acting like a filter, if statement, switch statement, or even a mathematical operation.
 
-See more about this in the [docs](./mapped_transformation.md#mapped-transformation).
+See more about this in the [docs](./neural_coding.md#mapped-transformation).
 
 ## Combinators
 
